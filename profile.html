@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Online Car Shop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+        }
+        
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+        
+        label {
+            color: #333;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #003974;
+        }
+        
+        /* Style adjustments for file input */
+        .file-input-wrapper {
+            text-align: left;
+            margin-top: 10px;
+        }
+        
+        .file-input-wrapper label {
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            background-color: #eee;
+            border-radius: 4px;
+        }
+        
+        .file-input-wrapper input[type="file"] {
+            display: none; /* Hide the default file input */
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <form action="/submit-profile" method="POST" enctype="multipart/form-data">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+        
+        <h3>Add Your Car Ad</h3>
+        <label for="make">Car Make:</label>
+        <input type="text" id="make" name="car_make" required>
+        
+        <label for="model">Car Model:</label>
+        <input type="text" id="model" name="car_model" required>
+        
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="car_year" min="1900" max="2024" required>
+        
+        <label for="price">Asking Price:</label>
+        <input type="number" id="price" name="car_price" required>
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="car_description" rows="4" cols="50"></textarea>
+        
+        <div class="file-input-wrapper">
+            <label for="car_images">Upload Car Images:</label>
+            <input type="file" id="car_images" name="car_images" multiple>
+        </div>
+        
+        <input type="submit" value="Submit Profile & Ad">
+    </form>
+</div>
+
+</body>
+</html>

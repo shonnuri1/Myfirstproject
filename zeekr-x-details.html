@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Zeekr X, 2023 год в Москве</title>
+    <link rel="stylesheet" href="stylepages.css">
+    <style>
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .car-details-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .car-heading {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .car-heading h1 {
+            margin: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .car-price {
+            text-align: left;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .car-gallery {
+            margin-top: 20px;
+            text-align: center; /* Center the carousel images */
+        }
+
+        .car-gallery img {
+            width: auto; /* Adjust the width as necessary */
+            max-width: 100%; /* Make sure the image is responsive */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 300px; /* Adjust this value to make images smaller */
+            margin-bottom: 10px; /* Space below the image */
+        }
+
+        .thumbnails {
+            display: flex; /* Thumbnails in a row */
+            justify-content: center; /* Center thumbnails */
+            gap: 10px; /* Spacing between thumbnails */
+        }
+
+        .thumbnails img {
+            width: 100px; /* Small thumbnails */
+            height: auto; /* Maintain aspect ratio */
+            cursor: pointer; /* Indicates that thumbnails are clickable */
+            border: 2px solid transparent; /* Transparent border for spacing */
+        }
+
+        .thumbnails img:hover,
+        .thumbnails img.active {
+            border-color: #007BFF; /* Highlight on hover and active */
+        }
+
+        .car-specs, .contact-info {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .car-specs strong, .contact-info strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .car-specs dd, .contact-info dd {
+            margin: 0;
+            margin-left: 120px;
+            color: #666;
+        }
+
+        .car-specs dt, .contact-info dt {
+            float: left;
+            clear: left;
+            width: 110px;
+            text-align: left;
+            color: #333;
+        }
+
+        .contact-info {
+            position: relative;
+            padding-left: 120px; /* Space for phone icon */
+        }
+
+        .contact-info:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            width: 80px; /* Size of your icon */
+            height: 80px; /* Size of your icon */
+            background: url('phone-icon.png') no-repeat center center; /* Your icon URL */
+            background-size: cover;
+        }
+
+        .warning {
+            background-color: #ffffe0;
+            border: 1px solid #ffff00;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .warning a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+
+        .car-actions button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            color: #fff;
+            background-color: #007BFF;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+
+        .car-actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+       <div class="car-details-container">
+        <div class="car-heading">
+            <h1>Продажа Zeekr X, 2023 год в Москве</h1>
+            <div class="car-price">
+                <span>4 100 000 ₽</span>
+                <a href="#" class="credit-offer">В кредит от 87 113 ₽ в месяц</a>
+            </div>
+        </div>
+
+    <div class="car-gallery">
+        <div class="carousel">
+            <!-- Full-size images for carousel -->
+            <img class="active" src="https://s2.auto.drom.ru/photo/yoOkVP3cpB68IbHGATqG8vVTmRgL-2VfU9cn2R_hFfNP_XQkFojegGVwGNENaWi8ywU5bxiP1vGZf1DYu40D7YkTqbZqgQ.jpg" alt="Zeekr X">
+            <img src="https://s2.auto.drom.ru/photo/kbf7cof9mZoSc0d0uf1aVLFIpNgDkWhYoQu69m6HH4GT1imnoxYJWrMhIVi2EX9LDJ8AsdX2DF8B68iGSCC0_RQ9M9_3KQ.jpg" alt="Zeekr X">
+            <img src="https://s2.auto.drom.ru/photo/wMZ5S9Uql-5daWS7xg7m-2_MBE0pzbalxjU_LRUpibyE4mVS6suOSVQucPd6SPm8EQ1Ze8XaNFPbjxBX_l8uCRdeW4ev.jpg" alt="Zeekr X">
+            <!-- Other full-size images -->
+
+            <!-- Carousel Buttons -->
+            <div class="carousel-buttons">
+                <button class="carousel-button" onclick="previousImage()">❮</button>
+                <button class="carousel-button" onclick="nextImage()">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        
+    </script>
+<div class="car-specs">
+            <strong>Двигатель:</strong> электро<br>
+            <strong>Мощность:</strong> 428 л.с., налог<br>
+            <strong>Коробка передач:</strong> автомат<br>
+            <strong>Привод:</strong> 4WD<br>
+            <strong>Цвет:</strong> белый<br>
+            <strong>Пробег:</strong> новый автомобиль<br>
+            <strong>Руль:</strong> левый<br>
+            <strong>VIN:</strong> L6T****************<br>
+            <strong>Дополнительно:</strong> Максимальная комплектация You, 5 мест, СБКТС оформлен, ЗИТС действующий, утиль сбор оплачен, ТПО в наличии, Таможня 100%, ГТД.<br>
+            <strong>Заметки:</strong> Машина в Москве. 100 км набирает за 3,6 секунды, 4 WD. Разумный торг возможен. Зарядная электро станция и коврики в подарок.<br>
+            <strong>Город:</strong> Москва
+             <div class="car-actions">
+            <button type="button">Добавить в избранное</button>
+            <button type="button">Пожаловаться на это объявление</button>
+            <button type="button">Продвинуть объявление</button>
+            <button type="button">Это мое объявление</button>
+    </div>
+</body>
+</html>
